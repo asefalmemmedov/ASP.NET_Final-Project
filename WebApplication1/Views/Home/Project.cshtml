@@ -1,0 +1,35 @@
+﻿@using WebApplication1.Models
+@model List<ProjectModel>
+@{
+    ViewBag.Title = "Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="mona-projects-area section-padding-80-0 mb-50">
+    <div class="container">
+        <div class="row mona-portfolio">
+            @foreach (var Project in Model)
+            {
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item mb-30">
+                    <div class="single-project-area">
+                        <img src="~/img/bg-img/31.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content d-flex align-items-center">
+                            <div class="hover-text">
+                                <h4>@Project.Name</h4>
+                                <h6>Model: @Project.Model</h6>
+                                <h6>Make-up: @Project.MakeUp</h6>
+                                <h6>Photographer: @Project.PhotoGrapher</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+
+
+        </div>
+    </div>
+</section>

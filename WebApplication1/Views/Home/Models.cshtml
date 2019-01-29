@@ -1,0 +1,593 @@
+﻿@using WebApplication1.Models;
+@{
+    var db = new MonoDbContext();
+}
+@{
+    ViewBag.Title = "Models";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<section class="mona-model-area model-page section-padding-80-0 mb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="model-tab-area">
+
+                    <ul class="nav nav-tabs mb-50" id="mona_modelTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tab1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Model</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Actor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab4" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4" aria-selected="false">Singer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mona Tab Content -->
+    <div class="mona-tab-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content" id="mona_modelTabContent">
+                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab1">
+                            <div class="row flex-wrap">
+                                <!-- Single Model Item -->
+                                @foreach (var item in db.OurModels)
+                                {
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                        <div class="single-model-item mb-50">
+                                            <div class="model-thumbnail">
+                                                <!-- First Thumbnail -->
+                                                <img class="first-thumbnail" src="@item.Photo" alt="">
+                                                <!-- Second Thumbnail -->
+                                                <img class="second-thumbnail" src="@item.HoverPhoto" alt="">
+                                                <!-- Share Info -->
+                                                <div class="share-info">
+                                                    <!-- Share Icon -->
+                                                    <div class="share-icon">
+                                                        <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                    </div>
+                                                    <!-- Others Icon -->
+                                                    <div class="others-icon">
+                                                        <a href="@item.Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="model-info">
+                                                <h3>@item.Title</h3>
+                                                <h6>@item.Profession</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                                @*<div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                        <div class="single-model-item mb-50">
+                                            <div class="model-thumbnail">
+                                                <!-- First Thumbnail -->
+                                                <img class="first-thumbnail" src="/img/bg-img/11.jpg" alt="">
+                                                <!-- Second Thumbnail -->
+                                                <img class="second-thumbnail" src="/img/bg-img/12.jpg" alt="">
+                                                <!-- Share Info -->
+                                                <div class="share-info">
+                                                    <!-- Share Icon -->
+                                                    <div class="share-icon">
+                                                        <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                    </div>
+                                                    <!-- Others Icon -->
+                                                    <div class="others-icon">
+                                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="model-info">
+                                                <h3>Della Martinez</h3>
+                                                <h6>Model</h6>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab2">
+                            <div class="row">
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/9.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/12.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Willie Figueroa</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/12.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/11.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Della Martinez</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/15.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/14.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Peter Alvarez</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/26.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/28.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Olive Ross</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/28.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/15.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Louise Ray</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab3">
+                            <div class="row">
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Willie Figueroa</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/11.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/12.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Della Martinez</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/12.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/13.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Peter Alvarez</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/13.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/14.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Olive Ross</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/14.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/15.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Louise Ray</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="tab-4" role="tabpanel" aria-labelledby="tab4">
+                            <div class="row">
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/12.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Willie Figueroa</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/12.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/14.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Della Martinez</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/15.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/16.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Peter Alvarez</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/16.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/13.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Olive Ross</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Single Model Item -->
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl">
+                                    <div class="single-model-item mb-50">
+                                        <div class="model-thumbnail">
+                                            <!-- First Thumbnail -->
+                                            <img class="first-thumbnail" src="~/img/bg-img/28.jpg" alt="">
+                                            <!-- Second Thumbnail -->
+                                            <img class="second-thumbnail" src="~/img/bg-img/26.jpg" alt="">
+                                            <!-- Share Info -->
+                                            <div class="share-info">
+                                                <!-- Share Icon -->
+                                                <div class="share-icon">
+                                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                                </div>
+                                                <!-- Others Icon -->
+                                                <div class="others-icon">
+                                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="model-info">
+                                            <h3>Louise Ray</h3>
+                                            <h6>Model</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

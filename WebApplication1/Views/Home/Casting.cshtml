@@ -1,0 +1,94 @@
+﻿@using WebApplication1.Models
+@model List<OurModel>
+@{
+    ViewBag.Title = "Casting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="mona-casting-form-area section-padding-80-0">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+
+            <!-- Casting Form Thumbnail -->
+            <div class="col-12 col-lg-6 col-xl-6">
+                <div class="casting-form-thumbnail mb-80">
+                    <img src="~/img/bg-img/30.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Casting Form -->
+            <div class="col-12 col-lg-6 col-xl-5">
+                <div class="casting-form mona-contact-form mb-80">
+                    <div class="contact-heading">
+
+
+                    </div>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="fullName">Name</label>
+                            <input type="text" class="form-control" name="Name" id="fullName">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailId">Email</label>
+                            <input type="email" class="form-control" name="Email" id="emailId">
+                        </div>
+                        <div class="form-group">
+                            <label for="resume">Resume</label>
+                            <textarea class="form-control" name="Resume" rows="8" cols="80" id="resume"></textarea>
+                        </div>
+                        <button type="submit" class="btn mona-btn btn-2 mt-15">Contact Us</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="mona-team-area">
+    <div class="container">
+        <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+                <div class="section-heading text-center">
+                    <h2>Our Judges</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <!-- Single Judges Area -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-team-member-area mb-80">
+                        <div class="team-member-thumbnail">
+                            <!-- Thumbnail -->
+                            <img src="@item.Photo" alt="">
+
+                            <!-- Share Info -->
+                            <div class="share-info">
+                                <!-- Share Icon -->
+                                <div class="share-icon">
+                                    <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                                </div>
+                                <!-- Others Icon -->
+                                <div class="others-icon">
+                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-member-info">
+                            <h4>@item.Title</h4>
+                            <h6>Director</h6>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,59 @@
+﻿@model WebApplication1.Models.ProjectModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MakeUp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MakeUp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoGrapher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoGrapher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectImg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
